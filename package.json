@@ -1,0 +1,26 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Team profile generator",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jest": "^26.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdehek/team-profile-generator.git"
+  },
+  "author": "Christian Dehek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdehek/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/cdehek/team-profile-generator#readme"
+}
