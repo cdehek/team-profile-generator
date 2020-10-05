@@ -2,7 +2,7 @@
 
 This is a simple profile generator that allows the user to create an HTML page based on their input.
 
-![image](./demoimg.png)
+<img src= "assets/demoimg.png">
 <a href="https://drive.google.com/file/d/1gmyOvagCF8D_yLpjQUW7fTy5br_PrIXq/view">
 ### Click here to see it in action!</a>
 ## Getting Started
