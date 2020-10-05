@@ -1,11 +1,17 @@
 const inquirer = require("inquirer");
+const fs = require('fs');
 
 
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+const generateHTML = require("./lib/generateHTML");
 
+const employees = [];
+const engineers = [];
+const interns = [];
+const managers = [];
 
 const promptUser = () => {
     inquirer
@@ -45,7 +51,7 @@ const promptUser = () => {
               ])
               .then(function(res) {
                 const officeNum = res.office;
-                console.log(officeNum);
+                // console.log(officeNum);
                 const manager = new Manager(
                   data.name,
                   res.id,
@@ -53,10 +59,10 @@ const promptUser = () => {
                   officeNum,
                   "Manager"
                 );
-                console.log(manager);
+                // console.log(manager);
                 employees.push(manager);
               }).then(function(){
-                addNext()
+                addNewEmployee()
                 });
             break;
           case "Engineer":
@@ -84,7 +90,7 @@ const promptUser = () => {
                 );
                 employees.push(engineer);
               }).then(function(){
-                addNext()
+                addNewEmployee()
                 });
             break;
           case "Intern":
@@ -120,6 +126,41 @@ const promptUser = () => {
       .then(function() {
     });
 };
+
+const addNewEmployee = () => {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+      name: "add",
+      message: "Would You Like To Add Another Employee?",
+      choices: ["Yes", "No"]
+      }
+    ])
+    .then(function(res) {
+      if (res.add === "Yes") {
+        promptUser();
+      } else {
+        console.log("Finished!");
+        finishedHTML(employees);
+      }
+    });
+};
+
+function finishedHTML(employees){
+  console.log("Finished!");
+  console.log(employees);
+  
+  const pageHTML = generateHTML(employees);
+  console.log(pageHTML);
+
+  fs.writeFile('index.html', pageHTML, err => {
+    if (err) throw err;
+
+    console.log('HTML complete! Checkout index.html to see the output!')
+  });
+}
+
 
 function init(){
     console.log("Please enter employee info")
