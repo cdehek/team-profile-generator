@@ -1,5 +1,4 @@
-function generateHTML(data) {
-    return `
+
   <!DOCTYPE html>
   <html>
   <head>
@@ -30,91 +29,55 @@ function generateHTML(data) {
     </div>
     <div class='container'>
     <ul class="ul">
-    ${makeCards(data)}
-    </ul>
-    </div>
-  </body>
-  </html>
-  `;
-  };
-  function makeCards(data) {
-    return data
-      .map(x => {
-        let position = x.getRole();
-        switch (position) {
-          case "Manager":
-            return makeManagerCard(x);
-            break;
-          case "Engineer":
-            return makeEngineerCard(x);
-            break;
-          case "Intern":
-            return makeInternCard(x);
-            break;
-        }
-      })
-      .join("\n");
-  }
-  function makeManagerCard(x) {
-    console.log(x);
-    let mangerCard = `
+    
     <li>
     <div class="col-md-3">
     <div class="card cardbody">
       <div class="card-header" style="background: #de4e7b">
-                   ${x.name}<br>
-                   <div class="fa fa-edit">${x.getRole()}</div>
+                   Bob<br>
+                   <div class="fa fa-edit">Manager</div>
                   </div>
       <div class="card-body">
         <form role="form">			
           <div class="form-group">
-              <label for="reserve-unique-id" id="reserve-unique-id">ID: ${
-                x.id
-              }</label>
+              <label for="reserve-unique-id" id="reserve-unique-id">ID: 1</label>
           </div>
           <div class="form-group">
-            <a href="mailto:${x.email}">Email:
-            ${x.email}
+            <a href="mailto:bob@fakemail.com">Email:
+            bob@fakemail.com
             </a>
           </div>
 
           <div class="form-group">
-              <label for="reserve-phone" id="reserve-office-number">Office Number: ${
-                x.officeNumber
-              }</label>					
+              <label for="reserve-phone" id="reserve-office-number">Office Number: 12</label>					
           </div>				
           </form>
       </div>
     </div>
   </div>
   </li>
-  `;
-    return mangerCard;
-  }
-  function makeEngineerCard(x) {
-    let engineerCard = `
+  
+
         <li>
         <div class="col-md-3">
                     <div class="card cardbody">
                       <div class="card-header" style="background: #51ed9f">
-                                   ${x.name}<br>
-                                  <div><i class="fa fa-book"></i> ${x.getRole()}</div>
+                                   Alex<br>
+                                  <div><i class="fa fa-book"></i> Engineer</div>
                                   </div>
                       <div class="card-body">
                         <form role="form">			
                           <div class="form-group">
-                              <label for="reserve-unique-id" id="reserve-unique-id">ID: ${
-                                x.id
-                              } </label>
+                              <label for="reserve-unique-id" id="reserve-unique-id">ID: 2 </label>
                           </div>
                           <div class="form-group">
-                            <a href="mailto:${x.email}">Email:
-                            ${x.email}
+                            <a href="mailto:alex@fakemail.com">Email:
+                            alex@fakemail.com
                             </a>
                           </div>
                           <div class="form-group">
-                              <a href="https://www.github.com/${x.github}" target="_blank">GitHub: 
-                              ${x.github}
+                              <a href="https://www.github.com/coderalex" target="_blank">GitHub: 
+                              coderalex
                               </a>
 
                           </div>				
@@ -123,40 +86,36 @@ function generateHTML(data) {
                     </div>
                   </div>
                   </li>
-    `;
-    return engineerCard;
-  }
-  function makeInternCard(x) {
-    let internCard = `
+    
+
     <li>
     <div class="col-md-3">
         <div class="card cardbody">
           <div class="card-header" style="background: #e8cc4f">
-                 ${x.name}<br>
-                <div><i class="fa fa-coffee"></i> ${x.getRole()}</div>
+                 Alice<br>
+                <div><i class="fa fa-coffee"></i> Intern</div>
                 </div>
           <div class="card-body">
           <form role="form">			
             <div class="form-group">
-              <label for="reserve-unique-id" id="reserve-unique-id">ID: ${
-                x.id
-              } </label>
+              <label for="reserve-unique-id" id="reserve-unique-id">ID: 3 </label>
             </div>
             <div class="form-group">
-                <a href="mailto:${x.email}">Email:
-                ${x.email}
+                <a href="mailto:alice@fakemail.com">Email:
+                alice@fakemail.com
                 </a>
             </div>
             <div class="form-group">
-              <label for="reserve-phone" id="school">School: ${x.school}</label>					
+              <label for="reserve-phone" id="school">School: UCLA</label>					
             </div>				
             </form>
           </div>
         </div>
               </div>
               </li>
-    `;
-    return internCard;
-  }
+    
+    </ul>
+    </div>
+  </body>
+  </html>
   
-  module.exports = generateHTML;
