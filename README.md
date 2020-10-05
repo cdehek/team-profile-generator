@@ -2,9 +2,12 @@
 
 This is a simple profile generator that allows the user to create an HTML page based on their input.
 
-<img src= "assets/demoimg.png"></img>
+![img](https://github.com/cdehek/team-profile-generator/blob/develop/assets/demoimg.PNG?raw=true)
+
 <a href="https://drive.google.com/file/d/1gmyOvagCF8D_yLpjQUW7fTy5br_PrIXq/view">
+
 ### Click here to see it in action!</a>
+
 ## Getting Started
 
 To get started, simply clone this GitHub repository, or download the repo.
