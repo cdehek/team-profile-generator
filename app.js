@@ -149,22 +149,23 @@ const addNewEmployee = () => {
 
 function finishedHTML(employees){
   console.log("Finished!");
-  console.log(employees);
+  // console.log(employees);
   
   const pageHTML = generateHTML(employees);
-  console.log(pageHTML);
+  // console.log(pageHTML);
 
-  fs.writeFile('index.html', pageHTML, err => {
+  fs.writeFile('team-profile.html', pageHTML, err => {
     if (err) throw err;
 
-    console.log('HTML complete! Checkout index.html to see the output!')
+    console.log('HTML complete! Checkout team-profile.html to see the output!')
   });
-}
+};
 
 
 function init(){
     console.log("Please enter employee info")
     promptUser();
 };
+
 
 init();
